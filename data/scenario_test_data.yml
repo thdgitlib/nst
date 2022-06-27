@@ -1,0 +1,12 @@
+test_logina:
+  Yybdm: "5408"
+  User_id: "540860000001"
+  except_result: True
+  except_code: 0
+  except_msg: "查询成功"
+
+
+test_queryTargetClearInfo:
+  User_id: "540700000012"
+  app_sno: "0000097698"
+  app_date: "20220516"

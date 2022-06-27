@@ -1,0 +1,64 @@
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://10.10.84.79:10002/api/Customer/login
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "Host": "10.10.84.79:10002"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": "10080",
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:conftest.py:71 code ==>> 期望结果：， 实际结果：【 0 】
+INFO     log:test_query.py:12 步骤1 ==>> 登录用户：540860000001
+INFO     log:test_query.py:30 *************** 开始执行用例 ***************
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://10.10.84.79:10002/api/OTC/queryFinanceCoupons
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "0262950bad0844869cc8efe4dcf369ea"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "0262950bad0844869cc8efe4dcf369ea",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1654591067659
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:eastmoney.py:108 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"}],"Errcode":0}
+INFO     log:test_query.py:35 code ==>> 期望结果：0， 实际结果：【 0 】
+INFO     log:test_query.py:37 *************** 结束执行用例 ***************

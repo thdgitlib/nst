@@ -1,0 +1,51 @@
+[ {
+  "uid" : "66024c1c4693f2",
+  "name" : "测试数据：id",
+  "time" : {
+    "start" : 1654591065475,
+    "stop" : 1654591066189,
+    "duration" : 714
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4d0d6a922106093a",
+  "name" : "测试数据：id",
+  "time" : {
+    "start" : 1654591067977,
+    "stop" : 1654591068049,
+    "duration" : 72
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5d5d1a035337511e",
+  "name" : "测试数据：id",
+  "time" : {
+    "start" : 1654591066490,
+    "stop" : 1654591067550,
+    "duration" : 1060
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cd0f7f1c5645d7ef",
+  "name" : "测试数据：id",
+  "time" : {
+    "start" : 1654591067659,
+    "stop" : 1654591067877,
+    "duration" : 218
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "819f0d722568989a",
+  "name" : "测试数据：id",
+  "time" : {
+    "start" : 1654591066196,
+    "stop" : 1654591066485,
+    "duration" : 289
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

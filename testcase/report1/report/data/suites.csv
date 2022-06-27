@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Jun 07 16:37:45 CST 2022","Tue Jun 07 16:37:46 CST 2022","714","testcase.testrpc","test_01_login","TestLogin","","","测试数据：id","该用例是针对获取用户登录接口的测试"
+"passed","Tue Jun 07 16:37:47 CST 2022","Tue Jun 07 16:37:48 CST 2022","72","testcase.testrpc","test_query","TestQuery","","","测试数据：id","该用例是针对查询优惠券接口的测试"
+"passed","Tue Jun 07 16:37:46 CST 2022","Tue Jun 07 16:37:47 CST 2022","1060","testcase.testrpc","test_modifyplan","TestModifyplan","","","测试数据：id","该用例是针对修改定投接口的测试"
+"passed","Tue Jun 07 16:37:47 CST 2022","Tue Jun 07 16:37:47 CST 2022","218","testcase.testrpc","test_query","TestQuery","","","测试数据：id","该用例是针对查询优惠券接口的测试"
+"passed","Tue Jun 07 16:37:46 CST 2022","Tue Jun 07 16:37:46 CST 2022","289","testcase.testrpc","test_01_queryTargetClearInfo","TestqueryTargetClearInfo","","","测试数据：id","该用例是针对查询目标投清算状态接口的测试"

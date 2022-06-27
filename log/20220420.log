@@ -1,0 +1,856 @@
+[2022-04-20 10:44:47,529][read_data.py 35][INFO]: 加载 F:\pythonspace\eastmoney\config\setting.ini 文件......
+[2022-04-20 10:44:47,531][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 10:44:47,532][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 10:44:47,532][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 10:44:47,537][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 10:44:47,537][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 10:44:47,560][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 10:44:47,642][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 10:44:47,644][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 10:44:47,645][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 10:44:47,653][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 10:44:47,653][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 10:44:47,662][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 10:44:47,669][test_01_login.py 25][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:44:47,669][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 10:44:47,669][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:44:47,669][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 10:44:47,669][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:44:47,669][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:44:47,669][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 10:44:47,669][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:44:47,669][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:44:47,994][eastmoney.py 60][INFO]: 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220420","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"QIdQQrv1jO/XlPqMWHxtK19TjlFEXI/i7buQIrz8Hw0m9iIJPq/yNZegqEtgStv+xAs7jg0cHLnqfflb6sQsX+5Kg67IFHjR5dfI3850yJCGwSSngD1VitnErjmgBherA66qB+PCg2LDxAgkzwDOmcntRBoeL1OUHrPxYxa1PrY=","Syspm_ex":"7","Time":"104530","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+[2022-04-20 10:44:47,994][test_01_login.py 36][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:44:47,996][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 10:44:47,996][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:44:47,997][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 10:44:47,997][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:44:47,997][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:44:47,997][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 10:44:47,997][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:44:47,997][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:44:48,097][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:44:48,097][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 10:44:48,098][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:44:48,098][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "76433a9450e048c789b9c26eeebde6b2"
+}
+[2022-04-20 10:44:48,098][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:44:48,098][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:44:48,098][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "76433a9450e048c789b9c26eeebde6b2",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650422688098
+}
+[2022-04-20 10:44:48,098][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:44:48,098][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:44:48,355][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"}],"Errcode":0}
+[2022-04-20 10:44:48,356][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:44:48,361][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:44:48,361][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 10:44:48,361][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:44:48,361][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "76433a9450e048c789b9c26eeebde6b2"
+}
+[2022-04-20 10:44:48,361][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:44:48,361][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:44:48,361][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 0,
+    "Zczh": "540860000001",
+    "Syspm3": "76433a9450e048c789b9c26eeebde6b2",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650422688361
+}
+[2022-04-20 10:44:48,361][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:44:48,361][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:44:48,466][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"}],"Errcode":0}
+[2022-04-20 10:44:48,467][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:54:21,756][read_data.py 35][INFO]: 加载 F:\pythonspace\eastmoney\config\setting.ini 文件......
+[2022-04-20 10:54:21,757][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 10:54:21,758][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 10:54:21,758][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 10:54:21,763][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 10:54:21,763][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 10:54:21,768][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 10:54:21,812][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 10:54:21,813][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 10:54:21,813][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 10:54:21,818][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 10:54:21,818][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 10:54:21,823][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 10:54:21,827][test_01_login.py 25][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:54:21,827][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 10:54:21,827][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:54:21,827][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 10:54:21,828][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:54:21,828][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:54:21,828][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 10:54:21,828][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:54:21,828][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:54:21,922][eastmoney.py 60][INFO]: 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220420","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"MTbE48VrnOXaWeZBjLirLmtHPYiHuv93v7n1Bq7a2/saTBiGz18b4YLkX7BU4PywAcOrx5vmSnduqHOwf948HnHLlncnQQv/0arLgW8OF4ME8KnipY1RUuiBmoXhgo2tzk7DNfpaqTqdEExWIp+LeTWesFAn4AnVlvXlQdELeSw=","Syspm_ex":"7","Time":"105504","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+[2022-04-20 10:54:21,922][test_01_login.py 36][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:54:21,933][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 10:54:21,933][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:54:21,933][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 10:54:21,933][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:54:21,933][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:54:21,933][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 10:54:21,933][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:54:21,933][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:54:22,030][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:54:22,030][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 10:54:22,030][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:54:22,031][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "0890b29d43574fa39b4de56159ce8c44"
+}
+[2022-04-20 10:54:22,031][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:54:22,031][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:54:22,031][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "0890b29d43574fa39b4de56159ce8c44",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650423262030
+}
+[2022-04-20 10:54:22,031][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:54:22,031][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:54:22,102][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"}],"Errcode":0}
+[2022-04-20 10:54:22,102][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:54:22,108][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:54:22,108][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 10:54:22,108][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:54:22,108][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "0890b29d43574fa39b4de56159ce8c44"
+}
+[2022-04-20 10:54:22,108][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:54:22,108][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:54:22,108][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 0,
+    "Zczh": "540860000001",
+    "Syspm3": "0890b29d43574fa39b4de56159ce8c44",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650423262108
+}
+[2022-04-20 10:54:22,108][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:54:22,108][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:54:22,183][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"}],"Errcode":0}
+[2022-04-20 10:54:22,183][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:58:10,025][read_data.py 35][INFO]: 加载 F:\pythonspace\eastmoney\config\setting.ini 文件......
+[2022-04-20 10:58:10,026][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 10:58:10,027][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 10:58:10,027][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 10:58:10,032][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 10:58:10,032][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 10:58:10,037][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 10:58:10,069][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 10:58:10,070][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 10:58:10,070][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 10:58:10,075][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 10:58:10,075][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 10:58:10,081][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 10:58:10,086][test_01_login.py 25][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:58:10,086][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 10:58:10,086][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:58:10,086][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 10:58:10,086][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:58:10,086][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:58:10,086][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 10:58:10,086][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:58:10,086][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:58:10,177][eastmoney.py 60][INFO]: 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220420","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"DwHAn0KBoy6FwrfxIxccyLRbccS6R74Y0UJ4jcrWvPZDk7bUFpUaRd026UrcxjDVLqMLcEyV5xZPtLMMF6lk779yZ1GbWrOTT1VgcpZrC4V4F5NXjyiwmzq4vYF1O46kAd7FNt536lfKnLdvDR71tJwkILoFdZ96RJFxNCXUmuQ=","Syspm_ex":"7","Time":"105852","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+[2022-04-20 10:58:10,177][test_01_login.py 36][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:58:10,180][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 10:58:10,180][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:58:10,180][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 10:58:10,180][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:58:10,180][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:58:10,180][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 10:58:10,180][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:58:10,180][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:58:10,270][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:58:10,270][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 10:58:10,270][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:58:10,270][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "c21d31dc7f354a629dcfc7475a0109fd"
+}
+[2022-04-20 10:58:10,270][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:58:10,270][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:58:10,271][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "c21d31dc7f354a629dcfc7475a0109fd",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650423490270
+}
+[2022-04-20 10:58:10,271][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:58:10,271][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:58:10,342][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"}],"Errcode":0}
+[2022-04-20 10:58:10,342][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 10:58:10,347][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 10:58:10,347][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 10:58:10,347][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 10:58:10,347][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "c21d31dc7f354a629dcfc7475a0109fd"
+}
+[2022-04-20 10:58:10,347][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 10:58:10,347][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 10:58:10,347][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 0,
+    "Zczh": "540860000001",
+    "Syspm3": "c21d31dc7f354a629dcfc7475a0109fd",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650423490347
+}
+[2022-04-20 10:58:10,347][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 10:58:10,347][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 10:58:10,419][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"}],"Errcode":0}
+[2022-04-20 10:58:10,419][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:05:38,974][read_data.py 35][INFO]: 加载 F:\pythonspace\eastmoney\config\setting.ini 文件......
+[2022-04-20 11:05:38,975][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 11:05:38,976][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 11:05:38,976][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 11:05:38,980][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 11:05:38,981][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 11:05:38,986][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 11:05:39,053][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 11:05:39,054][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 11:05:39,054][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 11:05:39,058][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 11:05:39,058][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 11:05:39,063][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 11:05:39,067][test_01_login.py 25][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:05:39,067][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 11:05:39,067][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:05:39,067][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 11:05:39,067][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:05:39,067][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:05:39,067][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 11:05:39,067][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:05:39,068][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:05:39,158][eastmoney.py 60][INFO]: 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220420","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"G8Pjxoc9GUhOFSGg4etIjMPS93qpnBlRNA1s9FLYBSbk9amgkvtbzW7Y+QOuPlJEZIEYz4KYzUY7TEvniFBhJbsXuF/OpA+4mRMEC+0Kvjzfp7B4sw6DgGIwQb9kxLsRoAtemP1PdH+rw5zuRS0DmV4lYNXKHoruY04lC/XNNuk=","Syspm_ex":"7","Time":"110621","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+[2022-04-20 11:05:39,158][test_01_login.py 36][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:05:39,176][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 11:05:39,176][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:05:39,176][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 11:05:39,176][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:05:39,176][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:05:39,176][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 11:05:39,177][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:05:39,177][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:05:39,264][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:05:39,264][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 11:05:39,264][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:05:39,264][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "6771f7d3ce2b42a3b08754d22343856d"
+}
+[2022-04-20 11:05:39,265][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:05:39,265][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:05:39,265][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "6771f7d3ce2b42a3b08754d22343856d",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650423939264
+}
+[2022-04-20 11:05:39,265][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:05:39,265][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:05:39,335][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"}],"Errcode":0}
+[2022-04-20 11:05:39,335][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:05:39,341][test_01_query.py 30][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:05:39,341][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 11:05:39,341][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:05:39,341][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "6771f7d3ce2b42a3b08754d22343856d"
+}
+[2022-04-20 11:05:39,341][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:05:39,341][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:05:39,341][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 0,
+    "Zczh": "540860000001",
+    "Syspm3": "6771f7d3ce2b42a3b08754d22343856d",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650423939342
+}
+[2022-04-20 11:05:39,341][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:05:39,341][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:05:39,414][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"}],"Errcode":0}
+[2022-04-20 11:05:39,415][test_01_query.py 38][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:15:19,121][read_data.py 35][INFO]: 加载 F:\pythonspace\eastmoney\config\setting.ini 文件......
+[2022-04-20 11:15:19,122][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 11:15:19,123][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 11:15:19,123][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 11:15:19,128][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 11:15:19,128][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 11:15:19,133][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 11:15:19,241][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 11:15:19,242][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 11:15:19,243][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 11:15:19,247][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 11:15:19,247][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 11:15:19,253][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 11:15:19,257][test_01_login.py 25][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:15:19,257][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 11:15:19,257][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:15:19,257][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 11:15:19,257][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:15:19,257][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:15:19,257][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 11:15:19,258][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:15:19,258][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:15:19,352][eastmoney.py 60][INFO]: 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220420","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"tDfxUip2+hCjVE4HSlstVAl9gUAM9jAWC0pb3p84LCw5Q9K/YbCB763FQCP6mjxTpWfSM8Bd4/J3ik0Dy/ZM1dJ1UOT0uIxlQ4Epbvx5yqlXgVoAjwZsjUrjzJ6sCue6e6CQjko5EXsEHzZ0fAaHqAOuyTtzngOOxeZXbxfPgPE=","Syspm_ex":"7","Time":"111601","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+[2022-04-20 11:15:19,352][test_01_login.py 36][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:15:19,354][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 11:15:19,354][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:15:19,355][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 11:15:19,355][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:15:19,355][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:15:19,355][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 11:15:19,355][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:15:19,355][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:15:19,442][test_01_query.py 12][INFO]: 步骤1 ==>> 登录用户：用户1
+[2022-04-20 11:15:19,442][test_01_query.py 31][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:15:19,442][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 11:15:19,442][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:15:19,442][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "e39e69873c42488c847a19589b01a3c0"
+}
+[2022-04-20 11:15:19,442][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:15:19,442][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:15:19,442][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "e39e69873c42488c847a19589b01a3c0",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650424519442
+}
+[2022-04-20 11:15:19,442][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:15:19,442][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:15:19,515][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"}],"Errcode":0}
+[2022-04-20 11:15:19,515][test_01_query.py 39][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:15:19,526][test_01_query.py 12][INFO]: 步骤1 ==>> 登录用户：用户1
+[2022-04-20 11:15:19,526][test_01_query.py 31][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:15:19,526][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 11:15:19,526][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:15:19,526][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "e39e69873c42488c847a19589b01a3c0"
+}
+[2022-04-20 11:15:19,526][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:15:19,526][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:15:19,526][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 0,
+    "Zczh": "540860000001",
+    "Syspm3": "e39e69873c42488c847a19589b01a3c0",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650424519526
+}
+[2022-04-20 11:15:19,526][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:15:19,526][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:15:19,599][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"}],"Errcode":0}
+[2022-04-20 11:15:19,599][test_01_query.py 39][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:23:25,491][read_data.py 35][INFO]: 加载 F:\pythonspace\eastmoney\config\setting.ini 文件......
+[2022-04-20 11:23:25,492][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 11:23:25,493][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 11:23:25,493][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 11:23:25,497][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 11:23:25,498][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 11:23:25,502][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 11:23:25,619][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\base_data.yml 文件......
+[2022-04-20 11:23:25,620][read_data.py 24][INFO]: 读到数据 ==>>  {'init_admin_user': {'username': '540860000001', 'password': '321321'}, 'init_sql': {'insert_delete_user': ["INSERT INTO user(username, password, role, sex, telephone, address) VALUES('测试test', '123456', '1', '1', '13488888888', '北京市海淀区')", "DELETE FROM user WHERE username = '测试test'"], 'delete_register_user': "DELETE FROM user WHERE username = '测试test'", 'update_user_telephone': "UPDATE user SET telephone = '13500010004' WHERE id = 4"}} 
+[2022-04-20 11:23:25,620][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\api_test_data.yml 文件......
+[2022-04-20 11:23:25,628][read_data.py 24][INFO]: 读到数据 ==>>  {'test_get_all_user_info': [[True, 0, '查询成功']], 'test_queryFinanceCoupons': [['540860000001', 1, True, 0, '查询成功'], ['540860000001', 0, True, 0, '查询成功']], 'test_get_get_one_user_info': [['wintest4', True, 0, '查询成功'], ['wintest1111', False, '1004', '查不到相关用户']], 'test_register_user': [['测试test', '123456', '13599999999', '1', '深圳市宝安区', True, 0, '注册成功'], ['测试test', '123456', '13599999999', '3', '深圳市宝安区', False, 2003, '输入的性别只能是 0(男) 或 1(女)'], ['wintest4', '123456', '13599999999', '1', '深圳市宝安区', False, 2002, '用户名已存在']], 'test_login_user': [['wintest', '123456', True, 0, '登录成功'], ['测试test', '123456', False, 1003, '用户名不存在']], 'test_update_user': [[4, '123456', '13500010014', '1', '深圳市宝安区', True, 0, '修改用户信息成功'], [4, '123456', '1350001001', '1', '深圳市宝安区', False, 4008, '手机号格式不正确'], [111, '123456', '13500010014', '1', '深圳市宝安区', False, 4005, '用户ID不存在']], 'test_delete_user': [['测试test', True, 0, '删除用户信息成功'], ['wintest3', False, 3006, '该用户不允许删除']]} 
+[2022-04-20 11:23:25,628][read_data.py 21][INFO]: 加载 F:\pythonspace\eastmoney\data\scenario_test_data.yml 文件......
+[2022-04-20 11:23:25,635][read_data.py 24][INFO]: 读到数据 ==>>  {'test_user_register_login_list': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '查询成功'}, 'test_user_repeat_register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 2002, 'except_msg': '用户名已存在，注册失败'}, 'test_user_register_login_update_success': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': True, 'except_code': 0, 'except_msg': '修改用户信息成功'}, 'test_user_register_login_update_fail': {'register': {'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区'}, 'login': {'admin_user': 'wintest', 'admin_pwd': '123456'}, 'update': {'new_password': '123456', 'new_telephone': '13599999998', 'new_sex': '1', 'new_address': '深圳市坪山区'}, 'except_result': False, 'except_code': 4005, 'except_msg': '修改的用户ID不存在'}, 'test_user_register_login_delete_success': {'admin_user': 'wintest', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': True, 'except_code': 0, 'except_msg': '删除用户信息成功'}, 'test_user_register_login_delete_fail': {'admin_user': 'wintest4', 'admin_pwd': '123456', 'username': '测试test', 'password': '123456', 'telephone': '13599999999', 'sex': '1', 'address': '深圳市宝安区', 'except_result': False, 'except_code': 3004, 'except_msg': '当前用户不是管理员用户'}} 
+[2022-04-20 11:23:25,639][test_01_login.py 25][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:23:25,639][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 11:23:25,639][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:23:25,639][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 11:23:25,639][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:23:25,639][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:23:25,639][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 11:23:25,639][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:23:25,639][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:23:25,732][eastmoney.py 60][INFO]: 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220420","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"OxnQCRlKh7FR2HAJ06cshvhvi0IcXCAJhrPhARO2O0AOLsfBK9EURZV5/EBz651lK7neBP6NBPooF9GyFJ43T2AvktrRqeO+mIK233QnIaso9KLr5WZ89uGe6sa7zoMyrmiuDH3axM5awZT4n7nwYhFm/Ehx3F7gvWoz+J4sW20=","Syspm_ex":"7","Time":"112408","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+[2022-04-20 11:23:25,732][test_01_login.py 36][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:23:25,740][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/Customer/login
+[2022-04-20 11:23:25,740][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:23:25,741][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+[2022-04-20 11:23:25,741][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:23:25,741][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:23:25,741][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": 1,
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+[2022-04-20 11:23:25,741][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:23:25,741][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:23:25,828][test_01_query.py 12][INFO]: 步骤1 ==>> 登录用户：用户1
+[2022-04-20 11:23:25,828][test_01_query.py 31][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:23:25,828][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 11:23:25,829][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:23:25,829][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "92d68d2e8cf54ddca3b7bebb74498fc2"
+}
+[2022-04-20 11:23:25,829][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:23:25,829][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:23:25,829][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 1,
+    "Zczh": "540860000001",
+    "Syspm3": "92d68d2e8cf54ddca3b7bebb74498fc2",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650425005828
+}
+[2022-04-20 11:23:25,829][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:23:25,829][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:23:25,901][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"1","COUPON_CODE":"540860000001b52867c4afd84cf7ab452137e0f2a6e4","COUPON_EXPIRE":"202204110000","COUPON_ID":"ZKQ232","COUPON_LIMIT":"0","COUPON_NAME":"认购折扣券08","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"20","FEEREBATE":"0.1","FUNDID":"540860000001","LOWER_LIMIT":"1","PROTYPE":"3","STATE":"2","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000010a7d596e6701440b93a02dbfaffa4452","COUPON_EXPIRE":"202204130000","COUPON_ID":"ZKQ233","COUPON_LIMIT":"1","COUPON_NAME":"折扣券发放","CUSTID":"540860000001","DESCRIPTION":"1231232","DISCOUNT_AMOUNT_LIMIT":"10000","ENABLE_TIME":"202204060000","FEEREBATE":"0.65","FUNDID":"540860000001","LOWER_LIMIT":"100","MAX_USE_COUNT":"3","PROTYPE":"2","STATE":"2","USE_RANGE_TYPE":"1"}],"Errcode":0}
+[2022-04-20 11:23:25,901][test_01_query.py 40][INFO]: *************** 结束执行用例 ***************
+[2022-04-20 11:23:25,906][test_01_query.py 12][INFO]: 步骤1 ==>> 登录用户：用户1
+[2022-04-20 11:23:25,906][test_01_query.py 31][INFO]: *************** 开始执行用例 ***************
+[2022-04-20 11:23:25,906][rest_client.py 51][INFO]: 接口请求地址 ==>> http://10.10.84.115:10002/api/OTC/queryFinanceCoupons
+[2022-04-20 11:23:25,906][rest_client.py 52][INFO]: 接口请求方式 ==>> POST
+[2022-04-20 11:23:25,906][rest_client.py 54][INFO]: 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "92d68d2e8cf54ddca3b7bebb74498fc2"
+}
+[2022-04-20 11:23:25,906][rest_client.py 55][INFO]: 接口请求 params 参数 ==>> null
+[2022-04-20 11:23:25,906][rest_client.py 56][INFO]: 接口请求体 data 参数 ==>> null
+[2022-04-20 11:23:25,907][rest_client.py 57][INFO]: 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryFinanceCoupons",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id_lx": "Z",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "queryType": 0,
+    "Zczh": "540860000001",
+    "Syspm3": "92d68d2e8cf54ddca3b7bebb74498fc2",
+    "custCode": "540860000001",
+    "cust_code": "540860000001",
+    "CUST_CODE": "540860000001",
+    "CUST_ID": "540860000001",
+    "custId": "540860000001",
+    "Khdm": "540860000001",
+    "USER_TYPE": "0",
+    "gw_reqtimestamp": 1650425005907
+}
+[2022-04-20 11:23:25,907][rest_client.py 58][INFO]: 接口上传附件 files 参数 ==>> None
+[2022-04-20 11:23:25,907][rest_client.py 59][INFO]: 接口 cookies 参数 ==>> null
+[2022-04-20 11:23:25,983][eastmoney.py 107][INFO]: 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"COUPON_CHAN":"2","COUPON_CODE":"5408600000016e50ce94da8141cebd30aaf40f789af4","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ226","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"50","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"},{"COUPON_CHAN":"2","COUPON_CODE":"5408600000017d647b150b104dfd88c85e8c77f10bba","COUPON_EXPIRE":"202204300000","COUPON_ID":"ZKQ227","COUPON_LIMIT":"1","COUPON_NAME":"认购申购费率折扣0406test","CUSTID":"540860000001","DISCOUNT_AMOUNT_LIMIT":"25","ENABLE_TIME":"202204050000","FEEREBATE":"0.01","FUNDID":"540860000001","LOWER_LIMIT":"10","PROTYPE":"3","STATE":"0","USE_RANGE_TYPE":"0"}],"Errcode":0}
+[2022-04-20 11:23:25,984][test_01_query.py 40][INFO]: *************** 结束执行用例 ***************

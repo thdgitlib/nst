@@ -1,0 +1,66 @@
+INFO     log:test_01_queryTargetClearInfo.py:25 *************** 开始执行用例 ***************
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://10.10.84.79:10002/api/Customer/login
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": "10080",
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5407",
+    "User_id": "540700000012",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:eastmoney.py:61 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220602","Syspm1":"540700000012","Syspm2":"5407","Syspm3":"m/GX9I/Qz9ooZh/rJN8n4UjYSOpVRQ+fP242FwyPtO68bEPY0JMfC0LmzmGiSioeWSLzhgpD3SLy2ruE/j6rReIUXfHWHoUddWAPyxyi11yAgl8lrp5wVfG0nS2mfFGNZAcKBoH70iDh9ysqqdm64TbLo59/HG+81q/fbc0aC34=","Syspm_ex":"3","Time":"172911","custprop":"0","khmc":"刘明"}],"Errcode":0}
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://10.10.84.79:10002/api/Fund/queryTargetClearInfo
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=utf-8",
+    "em_tg_session": "c6774af559b1434488f43adb7bbf572e"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "queryTargetClearInfo",
+    "Version": "10.1",
+    "Yybdm": "5407",
+    "User_id_lx": "Z",
+    "User_id": "540700000012",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service",
+    "Zczh": "540700000012",
+    "Syspm3": "c6774af559b1434488f43adb7bbf572e",
+    "custCode": "540700000012",
+    "cust_code": "540700000012",
+    "CUST_CODE": "540700000012",
+    "CUST_ID": "540700000012",
+    "custId": "540700000012",
+    "Khdm": "540700000012",
+    "USER_TYPE": "0",
+    "app_sno": "0000097698",
+    "app_date": "20220516",
+    "gw_reqtimestamp": 1654162146205
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:eastmoney.py:217 查询信息 ==>> 返回结果 ==>> {"Status":0,"Count":0,"Data":[{"isClear":"0","isStopProfit":"0","otcClearStatus":"0"}],"Errcode":0}
+INFO     log:test_01_queryTargetClearInfo.py:34 code ==>> 期望结果：0， 实际结果：【 0 】
+INFO     log:test_01_queryTargetClearInfo.py:36 *************** 结束执行用例 ***************

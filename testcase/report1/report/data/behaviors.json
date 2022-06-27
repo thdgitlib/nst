@@ -1,0 +1,118 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "针对单个接口的测试",
+    "children" : [ {
+      "name" : "登录模块",
+      "children" : [ {
+        "name" : "用例--查询优惠券",
+        "children" : [ {
+          "name" : "测试数据：id",
+          "uid" : "66024c1c4693f2",
+          "parentUid" : "ee7d046a19523577b6ddda6c1880583e",
+          "status" : "passed",
+          "time" : {
+            "start" : 1654591065475,
+            "stop" : 1654591066189,
+            "duration" : 714
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "测试数据：id",
+          "uid" : "819f0d722568989a",
+          "parentUid" : "ee7d046a19523577b6ddda6c1880583e",
+          "status" : "passed",
+          "time" : {
+            "start" : 1654591066196,
+            "stop" : 1654591066485,
+            "duration" : 289
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "ee7d046a19523577b6ddda6c1880583e"
+      } ],
+      "uid" : "5f65be0c762fc1246ad0b9f1d7fbf242"
+    }, {
+      "name" : "定投",
+      "children" : [ {
+        "name" : "用例--修改定投",
+        "children" : [ {
+          "name" : "测试数据：id",
+          "uid" : "5d5d1a035337511e",
+          "parentUid" : "6f0ec9f557a5960159c6f3453c1fd36e",
+          "status" : "passed",
+          "time" : {
+            "start" : 1654591066490,
+            "stop" : 1654591067550,
+            "duration" : 1060
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "6f0ec9f557a5960159c6f3453c1fd36e"
+      } ],
+      "uid" : "6fd340dbd24634fa14ea81269b15056c"
+    }, {
+      "name" : "查询模块",
+      "children" : [ {
+        "name" : "用例--查询优惠券",
+        "children" : [ {
+          "name" : "测试数据：id",
+          "uid" : "cd0f7f1c5645d7ef",
+          "parentUid" : "422fa64e18cfb8517146261d97752b1a",
+          "status" : "passed",
+          "time" : {
+            "start" : 1654591067659,
+            "stop" : 1654591067877,
+            "duration" : 218
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "0", "'查询成功'", "True", "'540860000001'", "1" ]
+        }, {
+          "name" : "测试数据：id",
+          "uid" : "4d0d6a922106093a",
+          "parentUid" : "422fa64e18cfb8517146261d97752b1a",
+          "status" : "passed",
+          "time" : {
+            "start" : 1654591067977,
+            "stop" : 1654591068049,
+            "duration" : 72
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "newPassed" : false,
+          "newBroken" : false,
+          "retriesCount" : 0,
+          "retriesStatusChange" : false,
+          "parameters" : [ "0", "'查询成功'", "True", "'540860000001'", "0" ]
+        } ],
+        "uid" : "422fa64e18cfb8517146261d97752b1a"
+      } ],
+      "uid" : "7a6aeecd12c2a02a9b04b34a4dc21988"
+    } ],
+    "uid" : "6b8f2f790c75a706c4fafda03d54caa6"
+  } ]
+}

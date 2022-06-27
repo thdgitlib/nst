@@ -1,0 +1,31 @@
+INFO     log:test_01_login.py:25 *************** 开始执行用例 ***************
+INFO     log:rest_client.py:51 接口请求地址 ==>> http://10.10.84.79:10002/api/Customer/login
+INFO     log:rest_client.py:52 接口请求方式 ==>> POST
+INFO     log:rest_client.py:54 接口请求头 ==>> {
+    "Content-Type": "application/json;charset=UTF-8",
+    "User-Agent": "Fiddler",
+    "Host": "10.10.81.228:8081",
+    "Content-Length": "400"
+}
+INFO     log:rest_client.py:55 接口请求 params 参数 ==>> null
+INFO     log:rest_client.py:56 接口请求体 data 参数 ==>> null
+INFO     log:rest_client.py:57 接口请求体 json 参数 ==>> {
+    "Jymm": "321321",
+    "Cssj": "10080",
+    "User_id_lx": "Z",
+    "Ex_pwd": "",
+    "Czxt": "Czxt",
+    "Sblx": "RNandroid",
+    "Sjhm": "LIP:NA;MAC:B06EBFBBF70B;IMEI:351564341272474;RMPN:hwCVWJHcbLWBDDjv1C6+xQ==;UMPN:NA;ICCID:NA;OSV:7.1.2;IMSI:460073301724711",
+    "Type": "login",
+    "Version": "10.1",
+    "Yybdm": "5408",
+    "User_id": "540860000001",
+    "emtoken": "EMRNV1",
+    "svrid": "em-secutrade-service"
+}
+INFO     log:rest_client.py:58 接口上传附件 files 参数 ==>> None
+INFO     log:rest_client.py:59 接口 cookies 参数 ==>> null
+INFO     log:eastmoney.py:61 登录用户 ==>> 返回结果 ==>> {"Status":0,"Count":1,"Data":[{"Date":"20220607","Syspm1":"540860000001","Syspm2":"5408","Syspm3":"jCsmXQqDPl4qid4hkXwGWVW6j0/knmLfuXt7g/IfcfyJRy6lpFAGdgkZApcnRBBBsrRv4NaxlKCV8RnN08MOLMvW4m+dCTG2CvVMb7APo9UK5n9p410YxX37ePQ2play/H6enyZPbZ3pFA8yFBTPlLxq3nNJx6+hchEU99hzP6M=","Syspm_ex":"7","Time":"163827","custprop":"0","khmc":"540860000001"}],"Errcode":0}
+INFO     log:test_01_login.py:31 code ==>> 期望结果：0， 实际结果：【 0 】
+INFO     log:test_01_login.py:33 *************** 结束执行用例 ***************

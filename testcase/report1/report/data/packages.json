@@ -1,0 +1,110 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "testcase.testrpc",
+    "children" : [ {
+      "name" : "test_01_login",
+      "children" : [ {
+        "name" : "测试数据：id",
+        "uid" : "66024c1c4693f2",
+        "parentUid" : "0757856f582b6352f7cf1a77d0ade34d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1654591065475,
+          "stop" : 1654591066189,
+          "duration" : 714
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0757856f582b6352f7cf1a77d0ade34d"
+    }, {
+      "name" : "test_01_queryTargetClearInfo",
+      "children" : [ {
+        "name" : "测试数据：id",
+        "uid" : "819f0d722568989a",
+        "parentUid" : "3229298865e14c79f8ff57ed95282dfb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1654591066196,
+          "stop" : 1654591066485,
+          "duration" : 289
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3229298865e14c79f8ff57ed95282dfb"
+    }, {
+      "name" : "test_modifyplan",
+      "children" : [ {
+        "name" : "测试数据：id",
+        "uid" : "5d5d1a035337511e",
+        "parentUid" : "4747f2d8f6c688ad877300c6642f0880",
+        "status" : "passed",
+        "time" : {
+          "start" : 1654591066490,
+          "stop" : 1654591067550,
+          "duration" : 1060
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4747f2d8f6c688ad877300c6642f0880"
+    }, {
+      "name" : "test_query",
+      "children" : [ {
+        "name" : "测试数据：id",
+        "uid" : "cd0f7f1c5645d7ef",
+        "parentUid" : "de6066ceedc4467b023887b03b3e04bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1654591067659,
+          "stop" : 1654591067877,
+          "duration" : 218
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "0", "'查询成功'", "True", "'540860000001'", "1" ]
+      }, {
+        "name" : "测试数据：id",
+        "uid" : "4d0d6a922106093a",
+        "parentUid" : "de6066ceedc4467b023887b03b3e04bb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1654591067977,
+          "stop" : 1654591068049,
+          "duration" : 72
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "0", "'查询成功'", "True", "'540860000001'", "0" ]
+      } ],
+      "uid" : "de6066ceedc4467b023887b03b3e04bb"
+    } ],
+    "uid" : "testcase.testrpc"
+  } ]
+}
